@@ -1,0 +1,39 @@
+
+<%- include('../includes/head.ejs') %>
+<header  class="headerPage">
+    <%- include('../includes/nav.ejs') %>
+</header>
+<body>
+    <section class="list">
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-12 ">
+                <div class="roundBTN">
+                    <a href="/getEmployer/0"><i class="fa fa-plus" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            
+            <div class="col-12">
+                <h2>Employers</h2>
+
+                <ul class="list-group">
+                <% for (let employer of Employers) { %>
+                <a href="/getEmployer/<%= employer.id %>" class="list-group-item ">
+                <p class="list-group-item-text"><%=employer.name%>,<%=employer.city%></p>
+                </a>
+                <% } %>
+                </ul>
+            </div>
+        
+        </div>
+    </div>
+
+
+    </section>
+   
+
+    <%- include('../includes/js.ejs') %>
+</body>
+<%- include('../includes/footer.ejs') %>
